@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns="http://phonegap.com/ns/plugins/1.0"
+    id="cordova-plugin-BLSpeechRecognition"
+    version="1.0.0">
+    <engines>
+        <engine name="cordova" version=">=3.3.0" />
+    </engines>
+
+    <name>BLSpeechRecognition</name>
+    <description>BLSpeechPlugin</description>
+
+    <js-module src="www/BLSpeechRecognition.js" name="BLSpeechRecognition">
+        <clobbers target="BLSpeechRecognition" />
+    </js-module>
+
+    <platform name="ios">
+        <source-file src="src/ios/BLSpeechRecognition.m" />
+        <header-file src="src/ios/BLSpeechRecognition.h" />
+        <source-file src="src/ios/SpeechManager.m" />
+        <header-file src="src/ios/SpeechManager.h" />
+
+        <config-file target="config.xml" parent="/widget">
+
+            <feature name="BLSpeechRecognition">
+                <param name="ios-package" value="BLSpeechRecognition" />
+            </feature>
+        </config-file>
+    </platform>
+</plugin>
